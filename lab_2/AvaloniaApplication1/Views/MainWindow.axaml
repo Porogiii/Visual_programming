@@ -1,0 +1,141 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="AvaloniaApplication1.Views.MainWindow"
+		Title="lab2" Width="600" Height="400" MinHeight="300" MinWidth="300"
+		Background="White">
+
+
+	<Grid ColumnDefinitions="0.33*, 0.001*, 0.66*">
+		
+		<StackPanel>
+
+			<Border
+				BorderThickness="2"
+				BorderBrush="Black">
+				<Button Name="buttonKhaki"
+					Content="Khaki"
+					Background="Khaki"
+					Foreground="Black"
+					HorizontalContentAlignment = "Center"
+					HorizontalAlignment="Stretch"
+					Click="Button_Click"/>
+			</Border>
+
+			<Border
+				BorderThickness="2"
+				BorderBrush="Black">
+				<Button Name="buttonRed"
+					Content="Red"
+					Background="Red"
+					Foreground="Black"
+					HorizontalContentAlignment = "Center"
+					HorizontalAlignment="Stretch"
+					Click="Button_Click"/>
+			</Border>
+
+
+			<Border
+				BorderThickness="2"
+				BorderBrush="Black">
+				<Button Name="buttonMediumVioletRed"
+					Content="MediumVioletRed"
+					Background="MediumVioletRed"
+					Foreground="Black"
+					HorizontalContentAlignment = "Center"
+					HorizontalAlignment="Stretch"
+					Click="Button_Click"/>
+			</Border>
+
+			<Border
+				BorderThickness="2"
+				BorderBrush="Black">
+				<Button Name="buttonBisque"
+					Content="Bisque"
+					Background="Bisque"
+					Foreground="Black"
+					HorizontalContentAlignment = "Center"
+					HorizontalAlignment="Stretch"
+					Click="Button_Click"/>
+			</Border>
+
+			<Border
+				BorderThickness="2"
+				BorderBrush="Black">
+				<Button Name="buttonLemonChiffon"
+					Content="LemonChiffon"
+					Background="LemonChiffon"
+					Foreground="Black"
+					HorizontalContentAlignment = "Center"
+					HorizontalAlignment="Stretch"
+					Click="Button_Click"/>
+			</Border>
+
+			<Border
+				BorderThickness="2"
+				BorderBrush="Black">
+				<Button Name="buttonPowderBlue"
+					Content="PowderBlue"
+					Background="PowderBlue"
+					Foreground="Black"
+					HorizontalContentAlignment = "Center"
+					HorizontalAlignment="Stretch"
+					Click="Button_Click"/>
+			</Border>
+
+			<Border
+				BorderThickness="2"
+				BorderBrush="Black">
+				<Button Name="buttonMintCream"
+					Content="MintCream"
+					Background="MintCream"
+					Foreground="Black"
+					HorizontalContentAlignment = "Center"
+					HorizontalAlignment="Stretch"
+					Click="Button_Click"/>
+			</Border>
+
+			<Border
+				BorderThickness="2"
+				BorderBrush="Black">
+				<Button Name="buttonMaroon"
+					Content="Maroon"
+					Background="Maroon"
+					Foreground="Black"
+					HorizontalContentAlignment = "Center"
+					HorizontalAlignment="Stretch"
+					Click="Button_Click"/>
+			</Border>
+
+			<Border
+				BorderThickness="2"
+				BorderBrush="Black">
+				<Button Name="buttonRosyBrown"
+					Content="RosyBrown"
+					Background="RosyBrown"
+					Foreground="Black"
+					HorizontalContentAlignment = "Center"
+					HorizontalAlignment="Stretch"
+					Click="Button_Click"/>
+			</Border>
+
+			<Border
+				BorderThickness="2"
+				BorderBrush="Black">
+				<Button Name="buttonLightPink"
+					Content="LightPink"
+					Background="LightPink"
+					Foreground="Black"
+					HorizontalContentAlignment = "Center"
+					HorizontalAlignment="Stretch"
+					Click="Button_Click"/>
+			</Border>
+
+		</StackPanel>
+
+		<GridSplitter Grid.Column="1" Background="Black"></GridSplitter>
+
+		<Panel Grid.Column="2" Background="Khaki" x:Name="Canvas"></Panel>
+		
+	</Grid>
+	
+</Window>
