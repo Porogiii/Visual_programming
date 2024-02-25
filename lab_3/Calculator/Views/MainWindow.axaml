@@ -1,0 +1,60 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="Calculator.Views.MainWindow"
+		xmlns:s="clr-namespace:System;assembly=mscorlib"
+        xmlns:vm="clr-namespace:Calculator.ViewModels"
+        Title="Calculator" Width="600" Height="400" MinHeight="200" MinWidth="300" Background="Black">
+
+	<Window.Styles>
+		<Style Selector="Button">
+			<Setter Property="Margin" Value="2"/>
+			<Setter Property="Background" Value="Gray"/>
+			<Setter Property="HorizontalAlignment" Value="Stretch"/>
+			<Setter Property="VerticalAlignment" Value="Stretch"/>
+			<Setter Property="BorderThickness" Value="1"/>
+			<Setter Property="BorderBrush" Value="Black"/>
+			<Setter Property="CornerRadius" Value="9"/>
+		</Style>
+	</Window.Styles>	
+
+	<Grid RowDefinitions="auto,auto,*">
+
+		<TextBlock Grid.Row="1" Text="{Binding ValStr, Mode=TwoWay}" TextAlignment="Right" FontSize="50" Margin="5" />
+
+		<Grid Grid.Row="2" RowDefinitions="*,*,*,*,*" ColumnDefinitions="*,*,*,*,*,*">
+			<Button Command="{Binding AppendDigit}" CommandParameter="1" Classes="Numbers" Grid.Row="0" Grid.Column="0" Content="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+			<Button Command="{Binding AppendDigit}" CommandParameter="2" Classes="Numbers" Grid.Row="0" Grid.Column="1" Content="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+			<Button Command="{Binding AppendDigit}" CommandParameter="3" Classes="Numbers" Grid.Row="0" Grid.Column="2" Content="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+			<Button Command="{Binding AppendDigit}" CommandParameter="4" Classes="Numbers" Grid.Row="1" Grid.Column="0" Content="4" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+			<Button Command="{Binding AppendDigit}" CommandParameter="5" Classes="Numbers" Grid.Row="1" Grid.Column="1" Content="5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+			<Button Command="{Binding AppendDigit}" CommandParameter="6" Classes="Numbers" Grid.Row="1" Grid.Column="2" Content="6" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+			<Button Command="{Binding AppendDigit}" CommandParameter="7" Classes="Numbers" Grid.Row="2" Grid.Column="0" Content="7" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+			<Button Command="{Binding AppendDigit}" CommandParameter="8" Classes="Numbers" Grid.Row="2" Grid.Column="1" Content="8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+			<Button Command="{Binding AppendDigit}" CommandParameter="9" Classes="Numbers" Grid.Row="2" Grid.Column="2" Content="9" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+			<Button Command="{Binding Clear}" Classes="Numbers" Grid.Row="3" Grid.Column="0" Content="C" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+			<Button Command="{Binding AppendDigit}" CommandParameter="0" Classes="Numbers" Grid.Row="3" Grid.Column="1" Content="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+			
+			<Button Grid.Row="3" Grid.Column="2" Content="" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+			
+			<Button Command="{Binding Calc}" CommandParameter="mod" Classes="Numbers" Grid.Row="0" Grid.Column="3" Content="mod" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+			<Button Command="{Binding Calc}" CommandParameter="n!" Classes="Numbers" Grid.Row="0" Grid.Column="4" Content="!" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+			<Button Command="{Binding Calc}" CommandParameter="+" Classes="Numbers" Grid.Row="1" Grid.Column="3" Content="+" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+			<Button Command="{Binding Calc}" CommandParameter="-" Classes="Numbers" Grid.Row="1" Grid.Column="4" Content="-" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+			<Button Command="{Binding Calc}" CommandParameter="*" Classes="Numbers" Grid.Row="2" Grid.Column="3" Content="*" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+			<Button Command="{Binding Calc}" CommandParameter="/" Classes="Numbers" Grid.Row="2" Grid.Column="4" Content="/" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+			
+			<Button Command="{Binding Calc}" Classes="Numbers" CommandParameter="=" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" Content="=" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>		
+			<Button Command="{Binding AppendDigit}" CommandParameter="," Classes="Numbers" Grid.Row="4" Grid.Column="0" Content="," HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+			
+			<Button Command="{Binding Calc}" CommandParameter="lg" Classes="Numbers" Grid.Row="4" Grid.Column="3" Content="lg" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+			<Button Command="{Binding Calc}" CommandParameter="ln" Classes="Numbers" Grid.Row="4" Grid.Column="4" Content="ln" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+			<Button Grid.Row="4" Grid.Column="5" Content=" none " HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+			<Button Command="{Binding Calc}" CommandParameter="x^y" Classes="Numbers" Grid.Row="0" Grid.Column="5" Content="x^y" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+			<Button Command="{Binding Calc}" CommandParameter="ceil" Classes="Numbers" Grid.Row="1" Grid.Column="5" Content="ceil" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+			<Button Command="{Binding Calc}" CommandParameter="floor" Classes="Numbers" Grid.Row="2" Grid.Column="5" Content="floor" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+			<Button Command="{Binding Calc}" CommandParameter="sin" Classes="Numbers" Grid.Row="3" Grid.Column="3" Content="sin" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+			<Button Command="{Binding Calc}" CommandParameter="cos" Classes="Numbers" Grid.Row="3" Grid.Column="4" Content="cos" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+			<Button Command="{Binding Calc}" CommandParameter="tan" Classes="Numbers" Grid.Row="3" Grid.Column="5" Content="tan" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+		</Grid>
+	</Grid>
+</Window>
