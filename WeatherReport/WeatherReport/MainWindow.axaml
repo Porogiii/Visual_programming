@@ -1,0 +1,80 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="300" d:DesignHeight="500"
+		Width="300" Height="500" MaxWidth="300" MaxHeight="500"
+		MinWidth="300" MinHeight="500"
+		xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        x:Class="WeatherReport.MainWindow"
+		xmlns:vm="clr-namespace:WeatherReport.Models.ViewModels"
+		x:DataType="vm:WeatherInfoPageViewModel"
+        Title="Weather Report"
+		Background="{Binding ColorBackground}">
+	<Window.DataContext>
+		<vm:WeatherInfoPageViewModel/>
+	</Window.DataContext>
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="0.05*" />
+			<RowDefinition Height="0.1*" />
+			<RowDefinition Height="0.1*" />
+			<RowDefinition Height="0.05*" />
+			<RowDefinition Height="0.7*" />
+		</Grid.RowDefinitions>
+		
+	<TextBlock HorizontalAlignment="Left" FontSize="16" Foreground="{Binding ColorText}" Margin="30,10,0,10" Text="{Binding Date}" Grid.Row="0"/>
+		
+		<TextBox VerticalAlignment="Top" HorizontalAlignment="Left" Margin="20,0,0,0"
+				FontSize="15" VerticalContentAlignment="Center" Watermark="Novosibirsk"
+				Grid.Row="1" Width="120" Height="50" Text="{Binding Q}"/>
+		<Button VerticalAlignment="Top" HorizontalAlignment="Left" VerticalContentAlignment="Center"
+				HorizontalContentAlignment="Center" Margin="160,0,0,0" FontSize="15"
+				Grid.Row="1" Width="120" Height="50" Content="Fetch weather" 
+				Command="{Binding FetchWeatherInformationCommand}" CommandParameter="{Binding Q}"/>
+		
+		<Grid Grid.Row="2">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="0.7*" />
+				<ColumnDefinition Width="0.3*" />
+			</Grid.ColumnDefinitions>
+			<TextBlock HorizontalAlignment="Left" FontSize="42" Foreground="{Binding ColorText}" Margin="30,10,0,0" Text="{Binding Temperature}" Grid.Column="0"/>
+			<Image Grid.Column="1" Margin="-25,10,45,0" Width="60" Height="60" Source="{Binding WeatherIcon}"/>
+		</Grid>
+		<TextBlock Text="{Binding Clock.NextDownloadCycle}" Margin="27,20,0,0" Grid.Row="3" Foreground="{Binding ColorText}"/>
+		<Border BorderThickness="4" Background="{Binding ColorBorder}" CornerRadius="20" Grid.Row="4" Margin="0,20,0,0">
+			<Grid>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="0.2*" />
+					<RowDefinition Height="0.2*" />
+					<RowDefinition Height="0.2*" />
+					<RowDefinition Height="0.2*" />
+					<RowDefinition Height="0.2*" />
+				</Grid.RowDefinitions>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="0.55*" />
+					<ColumnDefinition Width="0.15*" />
+					<ColumnDefinition Width="0.15*" />
+				</Grid.ColumnDefinitions>
+				
+				<TextBlock HorizontalAlignment="Left" FontSize="16" Foreground="{Binding ColorText}" Margin="20,20,0,0" Text="{Binding Date1}" Grid.Row="0"/>
+				<TextBlock HorizontalAlignment="Left" FontSize="16" Foreground="{Binding ColorText}" Margin="20,20,0,0" Text="{Binding Date2}" Grid.Row="1"/>
+				<TextBlock HorizontalAlignment="Left" FontSize="16" Foreground="{Binding ColorText}" Margin="20,20,0,0" Text="{Binding Date3}" Grid.Row="2"/>
+				<TextBlock HorizontalAlignment="Left" FontSize="16" Foreground="{Binding ColorText}" Margin="20,20,0,0" Text="{Binding Date4}" Grid.Row="3"/>
+				<TextBlock HorizontalAlignment="Left" FontSize="16" Foreground="{Binding ColorText}" Margin="20,20,0,0" Text="{Binding Date5}" Grid.Row="4"/>
+
+				<Image Margin="-30,0,35,0" Grid.Row="0" Grid.Column="1" Source="{Binding WeatherIcon1}"/>
+				<Image Margin="-30,0,35,0" Grid.Row="1" Grid.Column="1" Source="{Binding WeatherIcon2}"/>
+				<Image Margin="-30,0,35,0" Grid.Row="2" Grid.Column="1" Source="{Binding WeatherIcon3}"/>
+				<Image Margin="-30,0,35,0" Grid.Row="3" Grid.Column="1" Source="{Binding WeatherIcon4}"/>
+				<Image Margin="-30,0,35,0" Grid.Row="4" Grid.Column="1" Source="{Binding WeatherIcon5}"/>
+				
+				<TextBlock HorizontalAlignment="Left" FontSize="16" Foreground="{Binding ColorText}" Margin="-20,20,0,0" Text="{Binding Temperature1}" Grid.Row="0" Grid.Column="2"/>
+				<TextBlock HorizontalAlignment="Left" FontSize="16" Foreground="{Binding ColorText}" Margin="-20,20,0,0" Text="{Binding Temperature2}" Grid.Row="1" Grid.Column="2"/>
+				<TextBlock HorizontalAlignment="Left" FontSize="16" Foreground="{Binding ColorText}" Margin="-20,20,0,0" Text="{Binding Temperature3}" Grid.Row="2" Grid.Column="2"/>
+				<TextBlock HorizontalAlignment="Left" FontSize="16" Foreground="{Binding ColorText}" Margin="-20,20,0,0" Text="{Binding Temperature4}" Grid.Row="3" Grid.Column="2"/>
+				<TextBlock HorizontalAlignment="Left" FontSize="16" Foreground="{Binding ColorText}" Margin="-20,20,0,0" Text="{Binding Temperature5}" Grid.Row="4" Grid.Column="2"/>
+			</Grid>
+		</Border>
+	</Grid>
+</Window>
