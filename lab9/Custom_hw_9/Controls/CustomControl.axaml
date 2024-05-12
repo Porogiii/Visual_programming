@@ -1,0 +1,20 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:controls="using:Custom_hw_9.Controls">
+	<Design.PreviewWith>
+		<controls:CustomControl/>
+	</Design.PreviewWith>
+	<Style Selector="controls|CustomControl">
+		<Setter Property="Template">
+			<ControlTemplate>
+				<StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal">
+					<Button x:Name="ClickableButton" Height="50" Width="50">
+						<Rectangle Fill="LimeGreen" Height="50" Width="50"/>
+					</Button>
+					<Slider  Margin="10 0 0 0" x:Name="SliderHH" Minimum="0" Maximum="100" Width="100"
+                     IsVisible="{TemplateBinding Property=IsOpen}"/>
+				</StackPanel>
+			</ControlTemplate>
+		</Setter>
+	</Style>
+</Styles>
