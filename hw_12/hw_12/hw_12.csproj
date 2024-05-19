@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  
+  <ItemGroup>
+    <AvaloniaResource Include="Assets\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Avalonia" Version="$(AvaloniaVersion)" />
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="$(AvaloniaVersion)" />
+    <PackageReference Include="Avalonia.Fonts.Inter" Version="$(AvaloniaVersion)" />
+    <PackageReference Include="Avalonia.ReactiveUI" Version="$(AvaloniaVersion)" />
+    <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
+    <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="$(AvaloniaVersion)" />
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Controls\ExclusiveOrControl.axaml.cs">
+      <DependentUpon>ExclusiveOrControl.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\ExclusiveOrNotControl.axaml.cs">
+      <DependentUpon>ExclusiveOrNotControl.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\OrNotControl.axaml.cs">
+      <DependentUpon>OrNotControl.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="LogicComponent\LogicComponentControl.axaml.cs">
+      <DependentUpon>LogicComponentControl.axaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+</Project>

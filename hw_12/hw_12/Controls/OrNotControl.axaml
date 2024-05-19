@@ -1,0 +1,11 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			  xmlns:vm="using:hw_12.Controls"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="hw_12.Controls.OrNot">
+	<StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+		<vm:OrNotControlViewModel TypeValve="ANSI" Height="100" Width="50" Stroke="Black" StrokeThickness="1"/>
+	</StackPanel>
+</UserControl>

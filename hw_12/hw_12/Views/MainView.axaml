@@ -1,0 +1,195 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:hw_12.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="hw_12.Views.MainView"
+             x:DataType="vm:MainViewModel"
+             xmlns:lc="clr-namespace:hw_12.LogicComponent"
+             xmlns:lcShared="clr-namespace:hw_12.LogicComponent.Shared"
+             xmlns:lcTypes="clr-namespace:hw_12.LogicComponent.ComponentTypes">
+	<Design.DataContext>
+		<!-- This only sets the DataContext for the previewer in an IDE,
+         to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+		<vm:MainViewModel />
+	</Design.DataContext>
+	<ScrollViewer>
+		<StackPanel Orientation="Horizontal" >
+			<StackPanel Orientation="Vertical">
+				<lc:LogicComponentControl
+					InputValues="{Binding InputValues, Mode=TwoWay}"
+					OutputValue="{Binding Output, Mode=TwoWay}">
+					<lc:LogicComponentControl.VisualizationType>
+						<lcShared:VisualizationTypes>ANSI</lcShared:VisualizationTypes>
+					</lc:LogicComponentControl.VisualizationType>
+					<lc:LogicComponentControl.LogicComponent>
+						<lcTypes:BufferComponent />
+					</lc:LogicComponentControl.LogicComponent>
+				</lc:LogicComponentControl>
+				<lc:LogicComponentControl
+					InputValues="{Binding InputValues, Mode=TwoWay}"
+					OutputValue="{Binding Output, Mode=TwoWay}">
+					<lc:LogicComponentControl.VisualizationType>
+						<lcShared:VisualizationTypes>ANSI</lcShared:VisualizationTypes>
+					</lc:LogicComponentControl.VisualizationType>
+					<lc:LogicComponentControl.LogicComponent>
+						<lcTypes:InvertorComponent />
+					</lc:LogicComponentControl.LogicComponent>
+				</lc:LogicComponentControl>
+
+				<lc:LogicComponentControl
+					InputValues="{Binding InputValues, Mode=TwoWay}"
+					OutputValue="{Binding Output, Mode=TwoWay}">
+					<lc:LogicComponentControl.VisualizationType>
+						<lcShared:VisualizationTypes>ANSI</lcShared:VisualizationTypes>
+					</lc:LogicComponentControl.VisualizationType>
+					<lc:LogicComponentControl.LogicComponent>
+						<lcTypes:AndComponent />
+					</lc:LogicComponentControl.LogicComponent>
+				</lc:LogicComponentControl>
+
+				<lc:LogicComponentControl
+					InputValues="{Binding InputValues, Mode=TwoWay}"
+					OutputValue="{Binding Output, Mode=TwoWay}">
+					<lc:LogicComponentControl.VisualizationType>
+						<lcShared:VisualizationTypes>ANSI</lcShared:VisualizationTypes>
+					</lc:LogicComponentControl.VisualizationType>
+					<lc:LogicComponentControl.LogicComponent>
+						<lcTypes:AndNoComponent />
+					</lc:LogicComponentControl.LogicComponent>
+				</lc:LogicComponentControl>
+			</StackPanel>
+			<StackPanel Orientation="Vertical">
+				<lc:LogicComponentControl
+					InputValues="{Binding InputValues, Mode=TwoWay}"
+					OutputValue="{Binding Output, Mode=TwoWay}">
+					<lc:LogicComponentControl.VisualizationType>
+						<lcShared:VisualizationTypes>GOST</lcShared:VisualizationTypes>
+					</lc:LogicComponentControl.VisualizationType>
+					<lc:LogicComponentControl.LogicComponent>
+						<lcTypes:BufferComponent />
+					</lc:LogicComponentControl.LogicComponent>
+				</lc:LogicComponentControl>
+				<lc:LogicComponentControl
+					InputValues="{Binding InputValues, Mode=TwoWay}"
+					OutputValue="{Binding Output, Mode=TwoWay}">
+					<lc:LogicComponentControl.VisualizationType>
+						<lcShared:VisualizationTypes>GOST</lcShared:VisualizationTypes>
+					</lc:LogicComponentControl.VisualizationType>
+					<lc:LogicComponentControl.LogicComponent>
+						<lcTypes:InvertorComponent />
+					</lc:LogicComponentControl.LogicComponent>
+				</lc:LogicComponentControl>
+
+				<lc:LogicComponentControl
+					InputValues="{Binding InputValues, Mode=TwoWay}"
+					OutputValue="{Binding Output, Mode=TwoWay}">
+					<lc:LogicComponentControl.VisualizationType>
+						<lcShared:VisualizationTypes>GOST</lcShared:VisualizationTypes>
+					</lc:LogicComponentControl.VisualizationType>
+					<lc:LogicComponentControl.LogicComponent>
+						<lcTypes:AndComponent />
+					</lc:LogicComponentControl.LogicComponent>
+				</lc:LogicComponentControl>
+
+				<lc:LogicComponentControl
+					InputValues="{Binding InputValues, Mode=TwoWay}"
+					OutputValue="{Binding Output, Mode=TwoWay}">
+					<lc:LogicComponentControl.VisualizationType>
+						<lcShared:VisualizationTypes>GOST</lcShared:VisualizationTypes>
+					</lc:LogicComponentControl.VisualizationType>
+					<lc:LogicComponentControl.LogicComponent>
+						<lcTypes:AndNoComponent />
+					</lc:LogicComponentControl.LogicComponent>
+				</lc:LogicComponentControl>
+			</StackPanel>
+			<StackPanel>
+				<lc:LogicComponentControl
+					InputValues="{Binding InputValues, Mode=TwoWay}"
+					OutputValue="{Binding Output, Mode=TwoWay}">
+					<lc:LogicComponentControl.VisualizationType>
+						<lcShared:VisualizationTypes>ANSI</lcShared:VisualizationTypes>
+					</lc:LogicComponentControl.VisualizationType>
+					<lc:LogicComponentControl.LogicComponent>
+						<lcTypes:OrComponent />
+					</lc:LogicComponentControl.LogicComponent>
+				</lc:LogicComponentControl>
+				<lc:LogicComponentControl
+					InputValues="{Binding InputValues, Mode=TwoWay}"
+					OutputValue="{Binding Output, Mode=TwoWay}">
+					<lc:LogicComponentControl.VisualizationType>
+						<lcShared:VisualizationTypes>ANSI</lcShared:VisualizationTypes>
+					</lc:LogicComponentControl.VisualizationType>
+					<lc:LogicComponentControl.LogicComponent>
+						<lcTypes:OrNoComponent />
+					</lc:LogicComponentControl.LogicComponent>
+				</lc:LogicComponentControl>
+				<lc:LogicComponentControl
+					InputValues="{Binding InputValues, Mode=TwoWay}"
+					OutputValue="{Binding Output, Mode=TwoWay}">
+					<lc:LogicComponentControl.VisualizationType>
+						<lcShared:VisualizationTypes>ANSI</lcShared:VisualizationTypes>
+					</lc:LogicComponentControl.VisualizationType>
+					<lc:LogicComponentControl.LogicComponent>
+						<lcTypes:XorComponent />
+					</lc:LogicComponentControl.LogicComponent>
+				</lc:LogicComponentControl>
+				<lc:LogicComponentControl
+					InputValues="{Binding InputValues, Mode=TwoWay}"
+					OutputValue="{Binding Output, Mode=TwoWay}">
+					<lc:LogicComponentControl.VisualizationType>
+						<lcShared:VisualizationTypes>ANSI</lcShared:VisualizationTypes>
+					</lc:LogicComponentControl.VisualizationType>
+					<lc:LogicComponentControl.LogicComponent>
+						<lcTypes:XorNoComponent />
+					</lc:LogicComponentControl.LogicComponent>
+				</lc:LogicComponentControl>
+			</StackPanel>
+			<StackPanel>
+				<lc:LogicComponentControl
+					InputValues="{Binding InputValues, Mode=TwoWay}"
+					OutputValue="{Binding Output, Mode=TwoWay}">
+					<lc:LogicComponentControl.VisualizationType>
+						<lcShared:VisualizationTypes>GOST</lcShared:VisualizationTypes>
+					</lc:LogicComponentControl.VisualizationType>
+					<lc:LogicComponentControl.LogicComponent>
+						<lcTypes:OrComponent />
+					</lc:LogicComponentControl.LogicComponent>
+				</lc:LogicComponentControl>
+				<lc:LogicComponentControl
+					InputValues="{Binding InputValues, Mode=TwoWay}"
+					OutputValue="{Binding Output, Mode=TwoWay}">
+					<lc:LogicComponentControl.VisualizationType>
+						<lcShared:VisualizationTypes>GOST</lcShared:VisualizationTypes>
+					</lc:LogicComponentControl.VisualizationType>
+					<lc:LogicComponentControl.LogicComponent>
+						<lcTypes:OrNoComponent />
+					</lc:LogicComponentControl.LogicComponent>
+				</lc:LogicComponentControl>
+				<lc:LogicComponentControl
+					InputValues="{Binding InputValues, Mode=TwoWay}"
+					OutputValue="{Binding Output, Mode=TwoWay}">
+					<lc:LogicComponentControl.VisualizationType>
+						<lcShared:VisualizationTypes>GOST</lcShared:VisualizationTypes>
+					</lc:LogicComponentControl.VisualizationType>
+					<lc:LogicComponentControl.LogicComponent>
+						<lcTypes:XorComponent />
+					</lc:LogicComponentControl.LogicComponent>
+				</lc:LogicComponentControl>
+				<lc:LogicComponentControl
+					InputValues="{Binding InputValues, Mode=TwoWay}"
+					OutputValue="{Binding Output, Mode=TwoWay}">
+					<lc:LogicComponentControl.VisualizationType>
+						<lcShared:VisualizationTypes>GOST</lcShared:VisualizationTypes>
+					</lc:LogicComponentControl.VisualizationType>
+					<lc:LogicComponentControl.LogicComponent>
+						<lcTypes:XorNoComponent />
+					</lc:LogicComponentControl.LogicComponent>
+				</lc:LogicComponentControl>
+			</StackPanel>
+		</StackPanel>
+	</ScrollViewer>
+
+
+</UserControl>
