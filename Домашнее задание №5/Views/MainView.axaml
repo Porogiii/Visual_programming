@@ -1,0 +1,30 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:Домашнее_задание__5.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="Домашнее_задание__5.Views.MainView"
+             xmlns:model="clr-namespace:Домашнее_задание__5.Class"
+             x:DataType="vm:MainViewModel">
+	
+
+    <UserControl.DataContext>
+		<vm:MainViewModel/>
+	</UserControl.DataContext>
+
+    <Grid ColumnDefinitions="0.4*, Auto, *">
+        <ListBox Grid.Column="0" ItemsSource ="{Binding ExplorerItems}" Tapped ="TappedImage" DoubleTapped = "TappedListBox" SelectionMode="Single">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel ToolTip.Tip="{Binding Path}" Orientation ="Horizontal">
+                        <Image Width="32" Height="32" Source ="{Binding IconBitmap}"/>
+                        <TextBlock Text ="{Binding Name}" VerticalAlignment="Center" Margin="5"/> 
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <GridSplitter Grid.Column="1" Background="Gray"/>
+        <Image Grid.Column="2" Source="{Binding SelectedImageBitmap}" Stretch="Uniform"/>
+    </Grid>
+</UserControl>

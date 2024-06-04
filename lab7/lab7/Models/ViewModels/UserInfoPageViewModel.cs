@@ -57,7 +57,7 @@ namespace lab7.Models.ViewModels
 
         private void LogToFile(string message)
         {
-            string logFilePath = @"C:\Users\zahar\Desktop\test.txt";
+            string logFilePath = @"C:\Users\artem\OneDrive\Рабочий стол\test.txt";
             System.IO.File.AppendAllText(logFilePath, message + Environment.NewLine);
         }
 
